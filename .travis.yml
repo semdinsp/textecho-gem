@@ -8,7 +8,7 @@ script:
   - bundle
   - bundle install
   - cd test; 
-  - ruby textecho.rb
+  - ruby test_echo.rb
 notifications:
   recipients:
     - scott.sproule@estormtech.com

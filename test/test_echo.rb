@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/test_helper.rb'
 
-class TestEcho < Test::Unit::TestCase
+class TestEcho < Minitest::Test  #Test::Unit::TestCase
 
   def setup
     @f=Textecho::Base.new

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "textecho"
-  s.version     = "0.1.8"
+  s.version     = "0.1.9"
   s.author      = "Scott Sproule"
   s.email       = "scott.sproule@estormtech.com"
   s.homepage    = "http://github.com/semdinsp/textech"
@@ -10,5 +10,6 @@ Gem::Specification.new do |s|
   s.files        = Dir["{lib,test}/**/*"] +Dir["bin/*.rb"] + Dir["[A-Z]*"] # + ["init.rb"]
   s.require_path = "lib"
   s.rubyforge_project = s.name
+  s.license = 'MIT'
   s.required_rubygems_version = ">= 1.3.4"
 end

@@ -5,7 +5,7 @@ module Textecho
   class Base
     attr_accessor :input_message,:output_message, :output_list,:shortcode, :locale, :msg_source
   def debug
-    true
+    false
   end
   def msgs
     self.output_list

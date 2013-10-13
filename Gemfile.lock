@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    textecho (0.1.8)
+    textecho (0.1.9)
 
 GEM
   remote: https://rubygems.org/
@@ -9,7 +9,7 @@ GEM
     codeclimate-test-reporter (0.1.1)
       simplecov (>= 0.7.1, < 1.0.0)
     minitest (5.0.8)
-    multi_json (1.8.0)
+    multi_json (1.8.1)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)

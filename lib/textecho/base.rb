@@ -10,6 +10,9 @@ module Textecho
   def msgs
     self.output_list
   end
+  def disabled_message(locale=nil)
+    ["Sorry this application (#{self.class.to_s}) is not enabled currently. Please try again later"]
+  end
   
   def setup
     self.output_list = []

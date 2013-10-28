@@ -29,6 +29,21 @@ class TestEcho < Minitest::Test  #Test::Unit::TestCase
     assert msgs=@f.output_list, "messages and list not same"
     assert @f.msgs.first != @myMsg, "message echoed"
   end
+  def test_disabled
+    @f=Textecho::Randgen.new
+    msgs=@f.disabled_message
+    assert msgs.first.include?('later'), "message should be disabled #{msgs.inspect}"
+    msgs=@f.disabled_message('en')
+    assert msgs.first.include?('later'), "message should be disabled #{msgs.inspect}"
+  end
+  def test_disabled_classname
+     @f=Textecho::Randgen.new
+     msgs=@f.disabled_message
+     assert msgs.first.include?('Randgen'), "message should be disabled #{msgs.inspect}"
+     @f=Textecho::Base.new
+      msgs=@f.disabled_message
+      assert msgs.first.include?('Base'), "message should be disabled #{msgs.inspect}"
+   end
   
   def test_time
     @f=Textecho::Timecheck.new

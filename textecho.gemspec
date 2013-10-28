@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "textecho"
-  s.version     = "0.1.9"
+  s.version     = "0.2.0"
   s.author      = "Scott Sproule"
   s.email       = "scott.sproule@estormtech.com"
   s.homepage    = "http://github.com/semdinsp/textech"

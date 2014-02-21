@@ -3,7 +3,7 @@ require 'rubygems'
 
 module Textecho
   class Base
-    attr_accessor :input_message,:output_message, :output_list,:shortcode, :locale, :msg_source
+    attr_accessor :input_message,:output_message, :output_list,:shortcode, :locale, :msg_source, :params
   def debug
     false
   end
@@ -25,12 +25,13 @@ module Textecho
     self.locale="en" if !resp.keys.include? self.locale   # set locale to english if not proper
     return  self.help_prefix + resp[self.locale]
   end
-  def handle_message(src, msg, shortcode,locale=nil)
+  def handle_message(src, msg, shortcode,locale=nil,params={})
     setup
     self.locale=locale
     self.msg_source=src
     self.shortcode=shortcode
     self.input_message=msg.downcase
+    self.params=params
     puts "inspect is #{self.inspect} " if debug
     process()
   end

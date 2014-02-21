@@ -61,6 +61,22 @@ class TestEcho < Minitest::Test  #Test::Unit::TestCase
     msgs=@f.handle_message(@source,"help", @f.shortcode)
     assert msgs.first.include?("Help Message:"), "should be help message but was #{msgs.first}"
   end
+  def test_params
+     @f=Textecho::Timecheck.new
+     @f.shortcode='123'
+     t=Time.now.to_s
+     msgs=@f.handle_message(@source,"help", @f.shortcode,"en", {:test=> :fred})
+     assert msgs.first.include?("Help Message:"), "should be help message but was #{msgs.first}"
+     assert @f.params[:test]==:fred, "params should be held"
+   end
+   def test_params_blank
+      @f=Textecho::Timecheck.new
+      @f.shortcode='123'
+      t=Time.now.to_s
+      msgs=@f.handle_message(@source,"help", @f.shortcode,"en")
+      assert msgs.first.include?("Help Message:"), "should be help message but was #{msgs.first}"
+      assert @f.params.empty?, "params should be empty"
+    end
   def test_multi
      @f=Textecho::Multimessage.new   
      msgs=@f.handle_message(@source,@myMsg, @f.shortcode)

@@ -22,6 +22,13 @@ class TestEcho < Minitest::Test  #Test::Unit::TestCase
     assert !@f.msgs.first.include?(@myMsg2), "message should be downcase"
     assert @f.msgs.first.include?(@myMsg2.downcase), "message should be downcase"
   end
+  def test_params
+
+     msgs=@f.handle_message(@source,@myMsg2,@f.shortcode,{"test"=> true})
+       assert msgs=@f.msgs, "messages and list not same"
+     assert !@f.msgs.first.include?(@myMsg2), "message should be downcase"
+     assert @f.params['test'], "params not correct #{@f.params.inspect}"
+   end
   
   def test_rand
     @f=Textecho::Randgen.new

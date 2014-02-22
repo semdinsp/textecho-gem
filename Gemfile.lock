@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    textecho (0.2.1)
+    textecho (0.2.2)
 
 GEM
   remote: https://rubygems.org/

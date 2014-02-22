@@ -31,7 +31,7 @@ module Textecho
     self.msg_source=src
     self.shortcode=shortcode
     self.input_message=msg.downcase
-    self.params=params
+    self.params=params.clone
     puts "inspect is #{self.inspect} " if debug
     process()
   end
